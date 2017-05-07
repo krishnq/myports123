@@ -1,0 +1,148 @@
+<html>
+<head>
+  <style media="screen">
+    body{
+      overflow: hidden;
+    }
+    #main_name_hold{
+      width: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      margin: 0;
+      background-color: lightpink;
+      height: 500%;
+      transition-duration: 2s;
+    }
+    #name,#name1,#name2,#name3,#name4{
+      position:absolute;
+      left: 30%;
+      top:10%;
+      font-size: 6em;
+      transition-duration: 2s;
+      transform: translate(-50%,-50%);
+    }
+    #name1{
+      top: 30%;
+    }
+    #name2{
+      top: 50%;
+    }
+    #name3{
+      top: 70%;
+    }
+    #name4{
+      top: 90%;
+    }
+    .links_hold{
+      position: absolute;
+      height: 100%;
+      width: 50%;
+      left: 100%;
+      top: 0;
+      margin: 0;
+      padding: 0;
+      font-size: 4em;
+      transition-duration: 2s;
+      background-color: black;
+      color: white;
+    }
+    ol{
+      text-decoration:none;
+      margin-top: 10%;
+    }
+    a{
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+  <script type="text/javascript">
+    function trans(){
+      document.getElementById('name').style.left = "0";
+      document.getElementById('name').style.transform = "translate(0,-50%)";
+      document.getElementById('main_name_hold').style.width = "50%";
+      document.getElementsByClassName('links_hold')[0].style.left = "50%";
+
+    }
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script>
+  $(document).ready(function(){
+    // Add smooth scrolling to all links
+    $("a").on('click', function(event) {
+
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function(){
+
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      } // End if
+    });
+  });
+  </script>
+</head>
+
+<!-- Content ON the Right -->
+
+<body>
+<div class="links_hold" id="0">
+  <ol><a href="#1">LINK 1</a></ol>
+  <ol><a href="#2">LINK 2</a></ol>
+  <ol><a href="#3">LINK 3</a></ol>
+  <ol><a href="#4">LINK 4</a></ol>
+</div>
+<div id="1" style="position:absolute;width:50%;left:50%;height:100%;top:100%;">
+  this is 1
+</div>
+<div id="2" style="position:absolute;width:50%;left:50%;height:100%;top:200%;">
+  this is 2
+</div>
+<div id="3" style="position:absolute;width:50%;left:50%;height:100%;top:300%;">
+  this is 3
+</div>
+<div id="4" style="position:absolute;width:50%;left:50%;height:100%;top:400%;">
+  this is 4
+</div>
+
+<!-- home button that always floats -->
+  <a href="#0">
+    <div class="float_button" style="position: fixed;width: 5%;height: 5vw;background-color: red;border-radius: 50%;top: 1%;left: 93%;">
+    </div>
+  </a>
+
+  <!-- These are the names of section on the left -->
+    <div class="name_hold" id="main_name_hold" onclick="trans()">
+    <div class="" id="name">
+      SAI KRISHNA
+    </div>
+    <div class="" id="name1">
+      NAME 1
+    </div>
+    <div class="" id="name2">
+      NAME 2
+    </div>
+    <div class="" id="name3">
+      NAME 3
+    </div>
+    <div class="" id="name4">
+      NAME 4
+    </div>
+  </div>
+
+
+</body>
+</html>
